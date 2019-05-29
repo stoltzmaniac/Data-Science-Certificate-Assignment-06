@@ -1,0 +1,13 @@
+---
+title: "Assignment 06 - EDA"
+author: "Scott Stoltzman"
+date: "5/29/2019"
+output: html_document
+---
+
+
+# Do your EDA Work in this file!
+```{r}
+
+```
+
