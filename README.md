@@ -14,6 +14,6 @@ Exploratory data analysis (EDA)
     
 Choose a data set from one of the following:  
 
-  - [](https://www.kaggle.com/mehdidag/black-friday)
-  - [](https://www.kaggle.com/zynicide/wine-reviews)
-  - [](https://www.kaggle.com/cityofLA/los-angeles-parking-citations)
+  - [Black Friday](https://www.kaggle.com/mehdidag/black-friday)
+  - [Wine Reviews](https://www.kaggle.com/zynicide/wine-reviews)
+  - [LA Parking Citations](https://www.kaggle.com/cityofLA/los-angeles-parking-citations)
