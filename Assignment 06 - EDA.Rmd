@@ -7,6 +7,8 @@ output: html_document
 
 
 # Do your EDA Work in this file!
+
+### Hint: download a csv and then use the readr::read_csv('your_file_location')
 ```{r}
 
 ```
