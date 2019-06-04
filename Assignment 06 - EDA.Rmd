@@ -10,6 +10,59 @@ output: html_document
 
 ### Hint: download a csv and then use the readr::read_csv('your_file_location')
 ```{r}
+library(tidyverse)
+```
+```{r}
+MyWineData = read_csv('winemag-data-130k-v2.csv') %>%
+  drop_na(country)
+```
 
+
+```{r}
+head(MyWineData)
+```
+
+```{r}
+MyWineData %>%
+  group_by(country) %>%
+  summarize(n = n()) %>%
+  mutate(pct_n = n / sum(n)) %>%
+  arrange(desc(n)) %>%
+  mutate(pct_n_running = cumsum(pct_n)) %>%
+  mutate(top_95 = if_else(pct_n_running <= 0.95, country, 'Rest')) 
+  
+```
+
+
+```{r}
+MyWineData %>%
+  group_by(country, variety) %>%
+  summarize(n = n()) %>%
+  top_n(10) %>%
+  arrange(country, desc(n))
+  
+```
+
+```{r}
+MyWineData %>%
+  group_by(points) %>%
+  summarize(n = n()) %>%
+  arrange(desc(points))
+
+MyWineData %>%
+  ggplot(aes(x=points)) +
+  geom_histogram(binwidth = 1)
+
+```
+
+```{r}
+MyWineData %>%
+  filter (country=="US") %>%
+  group_by(variety) %>% 
+  summarize(points = mean(points)) %>%
+   ggplot(aes(x=reorder(variety, points), y=points)) +
+  geom_bar(stat='identity') + 
+  coord_flip() + 
+  theme(xlab = element_text())
 ```
 
